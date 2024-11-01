@@ -15,7 +15,7 @@ app.use(cors())
 app.use(userRouter)
 //app.use(categoryRouter)
 
-const PORT = 5000
+const PORT = 3006
 
 app.listen(PORT, () => {
      console.log(`App is listening on server ${PORT}`)
