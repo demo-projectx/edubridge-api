@@ -2,7 +2,7 @@
 import { UserModel } from "../models/user.js"
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
-// import { mailtransporter } from "../utils/mail.js"
+//import { mailtransporter } from "../utils/mail.js"
 //import { ProductModel } from "../models/product.js"
 
 export const registerUser = async (req, res, next) => {
