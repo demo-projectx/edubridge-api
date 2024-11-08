@@ -1,12 +1,18 @@
-// models/ParentDashboardModel.js
-const mongoose = require('mongoose');
+import mongoose, { model, Schema, Types } from "mongoose";
+import { toJSON } from "@reis/mongoose-to-json";
+
+
+
 
 const ParentDashboardSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   stats: { type: Object, required: true },
   notifications: { type: Array, default: [] },
   pendingTasks: { type: Array, default: [] },
-  // Add any additional fields specific to parent data
 });
 
-module.exports = mongoose.model('ParentDashboard', ParentDashboardSchema);
+ParentDashboardSchema.plugin(toJSON)
+
+
+
+export const ParentDashboardModel = model('ParentDashboard', ParentDashboardSchema);

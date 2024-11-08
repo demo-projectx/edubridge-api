@@ -1,18 +1,24 @@
-// controllers/dashboardController.js
-const TeacherDashboardModel = require('../models/TeacherDashboardModel');
-const ParentDashboardModel = require('../models/ParentDashboardModel');
-const StudentDashboardModel = require('../models/StudentDashboardModel');
+import { TeacherDashboardModel } from "../models/teacher-dashboard.js";
+import { ParentDashboardModel } from "../models/parent-dashboard.js";
+import { StudentDashboardModel } from "../models/student-dashboard.js";
+
+// Helper function to safely parse JSON
+const safeParseJSON = (data, defaultValue = {}) => {
+  try {
+    return JSON.parse(data);
+  } catch {
+    return defaultValue;
+  }
+};
 
 // Controller function for teacher dashboard
 export const getTeacherDashboard = async (req, res, next) => {
   try {
     const { filter = '{}', sort = '{}', limit = 100, skip = 0 } = req.query;
 
-    // Fetch and parse filter/sort data from query parameters
-    const parsedFilter = JSON.parse(filter);
-    const parsedSort = JSON.parse(sort);
+    const parsedFilter = safeParseJSON(filter);
+    const parsedSort = safeParseJSON(sort);
 
-    // Fetch data specific to teachers from the model
     const dashboardData = await TeacherDashboardModel
       .find(parsedFilter)
       .sort(parsedSort)
@@ -33,8 +39,8 @@ export const getParentDashboard = async (req, res, next) => {
   try {
     const { filter = '{}', sort = '{}', limit = 100, skip = 0 } = req.query;
 
-    const parsedFilter = JSON.parse(filter);
-    const parsedSort = JSON.parse(sort);
+    const parsedFilter = safeParseJSON(filter);
+    const parsedSort = safeParseJSON(sort);
 
     const dashboardData = await ParentDashboardModel
       .find(parsedFilter)
@@ -56,8 +62,8 @@ export const getStudentDashboard = async (req, res, next) => {
   try {
     const { filter = '{}', sort = '{}', limit = 100, skip = 0 } = req.query;
 
-    const parsedFilter = JSON.parse(filter);
-    const parsedSort = JSON.parse(sort);
+    const parsedFilter = safeParseJSON(filter);
+    const parsedSort = safeParseJSON(sort);
 
     const dashboardData = await StudentDashboardModel
       .find(parsedFilter)

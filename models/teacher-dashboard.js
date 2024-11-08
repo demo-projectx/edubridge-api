@@ -13,4 +13,4 @@ const TeacherDashboardSchema = new mongoose.Schema({
 
 TeacherDashboardSchema.plugin(toJSON)
 
-export const DashboardModel = model('TeacherDashboard', TeacherDashboardSchema);
+export const TeacherDashboardModel = model('TeacherDashboard', TeacherDashboardSchema);

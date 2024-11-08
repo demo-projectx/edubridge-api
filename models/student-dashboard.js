@@ -13,4 +13,4 @@ const StudentDashboardSchema = new Schema({
 
 StudentDashboardSchema.plugin(toJSON)
 
-export const DashboardModel = model('StudentDashboard', StudentDashboardSchema);
+export const StudentDashboardModel = model('StudentDashboard', StudentDashboardSchema);

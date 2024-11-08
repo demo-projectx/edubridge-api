@@ -1,9 +1,11 @@
 import express from 'express';
 import mongoose from 'mongoose';
-//import productRouter from './routes/product.js';
+import dashboardRouter from './routes/dashboard.js';
 import userRouter from './routes/user.js';
+import studentRouter from './routes/student.js';
+
+
 import cors from 'cors'
-//import categoryRouter from './routes/category.js';
 
 await mongoose.connect(process.env.MONGO_URI);
 
@@ -13,10 +15,24 @@ app.use(express.json())
 app.use(cors())
 
 app.use(userRouter)
-//app.use(categoryRouter)
+app.use(dashboardRouter)
+// app.use('/api/students', studentRouter);
+// app.use('/dashboard', dashboardRouter);
+
+
 
 const PORT = 3006
 
 app.listen(PORT, () => {
      console.log(`App is listening on server ${PORT}`)
 })
+
+
+
+
+
+
+
+
+
+
