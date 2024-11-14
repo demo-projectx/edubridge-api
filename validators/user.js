@@ -4,7 +4,7 @@ export const postUserValidator = Joi.object({
     name: Joi.string().required(),
     email: Joi.string().email().required(),
     password: Joi.string(),
-    role: Joi.string().valid('user', 'vendor')
+    role: Joi.string().valid('Teacher', 'Parent', 'Student')
 })
 
 export const updateUserValidator = Joi.object({
