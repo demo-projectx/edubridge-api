@@ -7,7 +7,7 @@
      secure:true,
      auth:{
          user: 'berikisuibrahim227@gmail.com',
-         pass:'avcnsoulzylscmsu'
+         pass: 'vnjudduzvmidetly'
      },
-     from: 'berikisuibrahim@gmail.com'
+     from: 'berikisuibrahim227@gmail.com'
  })

@@ -5,6 +5,8 @@ import userRouter from './routes/user.js';
 import studentRouter from './routes/student.js';
 import progressRouter from './routes/progress.js';
 import notificationRouter from './routes/notification.js';
+import messageRouter from './routes/message.js';
+
 
 
 
@@ -22,6 +24,8 @@ app.use(dashboardRouter)
 app.use('/api/students', studentRouter);
 app.use('/api/progress', progressRouter);
 app.use('/api/notifications', notificationRouter);
+app.use('/api/messages', messageRouter);
+
 
 const PORT = 3006
 

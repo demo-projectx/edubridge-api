@@ -1,4 +1,6 @@
 import mongoose from 'mongoose';
+import { toJSON } from "@reis/mongoose-to-json";
+
 
 const notificationSchema = new mongoose.Schema({
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
@@ -7,4 +9,13 @@ const notificationSchema = new mongoose.Schema({
     isRead: { type: Boolean, default: false }
 });
 
-export default mongoose.model('Notification', notificationSchema);
+notificationSchema.plugin(toJSON)
+
+
+
+const Notification = mongoose.model('Notification', notificationSchema);
+export { Notification };
+
+
+
+

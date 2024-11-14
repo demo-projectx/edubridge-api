@@ -2,7 +2,6 @@ import { TeacherDashboardModel } from "../models/teacher-dashboard.js";
 import { ParentDashboardModel } from "../models/parent-dashboard.js";
 import { StudentDashboardModel } from "../models/student-dashboard.js";
 
-// Helper function to safely parse JSON
 const safeParseJSON = (data, defaultValue = {}) => {
   try {
     return JSON.parse(data);

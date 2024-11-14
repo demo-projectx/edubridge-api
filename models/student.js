@@ -7,9 +7,12 @@ const attendanceSchema = new mongoose.Schema({
 
 const studentSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  grade: { type: String, required: true },
+  grade: { type: String },
   progress: { type: String, default: "" },
-  attendance: [attendanceSchema]
+  attendance: [attendanceSchema],
+  studentId: { type: String, required: true },
+  email: {type: String, required: true, unique:true},
+
 });
 
 const StudentModel = mongoose.model('Student', studentSchema);
