@@ -2,6 +2,7 @@ import { MessageModel } from "../models/message.js";
 
 // Send a new message
 export const sendMessage = async (req, res, next) => {
+    const url =`https://smsc.hubtel.com/v1/messages/send?clientsecret=${Client_id}&clientid=evsapkni&from=LearnLink&to=233550194328&content=This+Is+A+Test+Message`
     try {
         const { receiverId, content } = req.body;
         const message = new Message({
