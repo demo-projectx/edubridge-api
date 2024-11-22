@@ -21,10 +21,10 @@ app.use(cors())
 
 app.use(userRouter)
 app.use(dashboardRouter)
-app.use('/api/students', studentRouter);
-app.use('/api/progress', progressRouter);
-app.use('/api/notifications', notificationRouter);
-app.use('/api/messages', messageRouter);
+app.use(studentRouter);
+app.use( progressRouter);
+app.use( notificationRouter);
+app.use(messageRouter);
 
 
 const PORT = 3006
